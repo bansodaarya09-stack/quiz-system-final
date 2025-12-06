@@ -1,9 +1,6 @@
-export const API_BASE = "http://quiz-backend-env-1.eba-3xbkacm2.ap-south-1.elasticbeanstalk.com";
+// src/api.js
+// Put the EB backend URL here (your Elastic Beanstalk environment URL).
+// If you deploy frontend with backend to same domain, you can use empty string '' to use relative paths.
 
-export async function apiRequest(path, options = {}) {
-  const res = await fetch(`${API_BASE}${path}`, {
-    headers: { "Content-Type": "application/json" },
-    ...options,
-  });
-  return res.json();
-}
+export const API_BASE = process.env.REACT_APP_API_BASE || 'https://quiz-backend-env.eba-3xbkacm2.ap-south-1.elasticbeanstalk.com';
+// Example above: replace with your actual EB env url if different.
