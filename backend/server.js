@@ -133,5 +133,6 @@ app.get('/api/results', authMiddleware, (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log('Backend running on', PORT));
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log("Server running on", PORT));
+
